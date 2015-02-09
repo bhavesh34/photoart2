@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="photoart" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAB10\SQLEXPRESS;Initial Catalog=photoart;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="photoartConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.admin_login" Member="admin_logins">
+    <Type Name="admin_login">
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.auction_finish" Member="auction_finishes">
+    <Type Name="auction_finish">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="p_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="s_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="final_amt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="closing_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="seller_notify" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="bidder_notify" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="auction_finish_auction_finish" Member="auction_finish2" ThisKey="id" OtherKey="id" Type="auction_finish" Cardinality="One" />
+      <Association Name="auction_finish_auction_finish" Member="auction_finish1" ThisKey="id" OtherKey="id" Type="auction_finish" IsForeignKey="true" />
+      <Association Name="product_auction_finish" Member="product" ThisKey="p_id" OtherKey="pid" Type="product" IsForeignKey="true" />
+      <Association Name="seller_auction_finish" Member="seller" ThisKey="s_id" OtherKey="id" Type="seller" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.auction_reg" Member="auction_regs">
+    <Type Name="auction_reg">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="expected_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="minimum_increment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="auction_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="product_auction_reg" Member="product" ThisKey="pid" OtherKey="pid" Type="product" IsForeignKey="true" />
+      <Association Name="seller_auction_reg" Member="seller" ThisKey="sid" OtherKey="id" Type="seller" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.bid_transaction" Member="bid_transactions">
+    <Type Name="bid_transaction">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="p_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="min_bid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="min_intvalue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="last_bidvalue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="closin_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="product_bid_transaction" Member="product" ThisKey="p_id" OtherKey="pid" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.buyer" Member="buyers">
+    <Type Name="buyer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="last" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phone_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="area_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ctid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="addrerss" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="buyer_order_info" Member="order_infos" ThisKey="id" OtherKey="b_id" Type="order_info" />
+    </Type>
+  </Table>
+  <Table Name="dbo.catagory" Member="catagories">
+    <Type Name="catagory">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="catagory_product" Member="products" ThisKey="id" OtherKey="cat_id" Type="product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.city" Member="cities">
+    <Type Name="city">
+      <Column Name="sid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="state_city" Member="state" ThisKey="sid" OtherKey="sid" Type="state" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.country" Member="countries">
+    <Type Name="country">
+      <Column Name="cid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[News feeds]" Member="News_feeds">
+    <Type Name="News_feed">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Feed" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.order_info" Member="order_infos">
+    <Type Name="order_info">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="p_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="s_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="b_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="buyer_order_info" Member="buyer" ThisKey="b_id" OtherKey="id" Type="buyer" IsForeignKey="true" />
+      <Association Name="product_order_info" Member="product" ThisKey="p_id" OtherKey="pid" Type="product" IsForeignKey="true" />
+      <Association Name="seller_order_info" Member="seller" ThisKey="s_id" OtherKey="id" Type="seller" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.product" Member="products">
+    <Type Name="product">
+      <Column Name="pid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="product_descp" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="image" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="seller_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cat_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="product_auction_finish" Member="auction_finishes" ThisKey="pid" OtherKey="p_id" Type="auction_finish" />
+      <Association Name="product_auction_reg" Member="auction_regs" ThisKey="pid" OtherKey="pid" Type="auction_reg" />
+      <Association Name="product_bid_transaction" Member="bid_transactions" ThisKey="pid" OtherKey="p_id" Type="bid_transaction" />
+      <Association Name="product_order_info" Member="order_infos" ThisKey="pid" OtherKey="p_id" Type="order_info" />
+      <Association Name="catagory_product" Member="catagory" ThisKey="cat_id" OtherKey="id" Type="catagory" IsForeignKey="true" />
+      <Association Name="seller_product" Member="seller" ThisKey="seller_id" OtherKey="id" Type="seller" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.seller" Member="sellers">
+    <Type Name="seller">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ctid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="email_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="image_url" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="phone_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="seller_auction_finish" Member="auction_finishes" ThisKey="id" OtherKey="s_id" Type="auction_finish" />
+      <Association Name="seller_auction_reg" Member="auction_regs" ThisKey="id" OtherKey="sid" Type="auction_reg" />
+      <Association Name="seller_order_info" Member="order_infos" ThisKey="id" OtherKey="s_id" Type="order_info" />
+      <Association Name="seller_product" Member="products" ThisKey="id" OtherKey="seller_id" Type="product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.state" Member="states">
+    <Type Name="state">
+      <Column Name="cid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="state_city" Member="cities" ThisKey="sid" OtherKey="sid" Type="city" />
+    </Type>
+  </Table>
+  <Function Name="dbo.StoredProcedure1" Method="StoredProcedure1">
+    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="StoredProcedure1Result">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="last" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phone_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="area_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ctid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="addrerss" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.StoredProcedure3" Method="StoredProcedure3">
+    <ElementType Name="StoredProcedure3Result">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

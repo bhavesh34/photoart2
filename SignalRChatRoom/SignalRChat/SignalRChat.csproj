@@ -1,0 +1,993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D43E0B39-D610-4510-AB42-C778E2B99D94}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SignalRChat</RootNamespace>
+    <AssemblyName>SignalRChat</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.0.0\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.0.0\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.0.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.1.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="31.gif" />
+    <Content Include="Add_product.aspx" />
+    <Content Include="App_Code\style.css" />
+    <Content Include="Auction_Page.aspx" />
+    <Content Include="click-but6.gif" />
+    <Content Include="Css\ie6.css" />
+    <Content Include="Css\images\big1.jpg" />
+    <Content Include="Css\images\big2.jpg" />
+    <Content Include="Css\images\big3.jpg" />
+    <Content Include="Css\images\body.gif" />
+    <Content Include="Css\images\bul.gif" />
+    <Content Include="Css\images\cart-link.gif" />
+    <Content Include="Css\images\cat.gif" />
+    <Content Include="Css\images\h2-arr.gif" />
+    <Content Include="Css\images\header.gif" />
+    <Content Include="Css\images\ico1.gif" />
+    <Content Include="Css\images\ico2.gif" />
+    <Content Include="Css\images\ico3.gif" />
+    <Content Include="Css\images\ico4.gif" />
+    <Content Include="Css\images\ie6.css" />
+    <Content Include="Css\images\info.png" />
+    <Content Include="Css\images\logo.gif" />
+    <Content Include="Css\images\next.gif" />
+    <Content Include="Css\images\PhotoArt1.png" />
+    <Content Include="Css\images\PhotoArt2.png" />
+    <Content Include="Css\images\prev.gif" />
+    <Content Include="Css\images\slide1.jpg" />
+    <Content Include="Css\images\small1.jpg" />
+    <Content Include="Css\images\small2.jpg" />
+    <Content Include="Css\images\small3.jpg" />
+    <Content Include="Css\images\small4.jpg" />
+    <Content Include="Css\images\small5.jpg" />
+    <Content Include="Css\images\small6.jpg" />
+    <Content Include="Css\images\small7.jpg" />
+    <Content Include="Css\images\style.css" />
+    <Content Include="FitCat.aspx" />
+    <Content Include="js\index.js" />
+    <Content Include="Css\style.css" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\gallery\image_01_l.jpg" />
+    <Content Include="Images\gallery\image_01_s.jpg" />
+    <Content Include="Images\gallery\image_02_l.jpg" />
+    <Content Include="Images\gallery\image_02_s.jpg" />
+    <Content Include="Images\gallery\image_03_l.jpg" />
+    <Content Include="Images\gallery\image_03_s.jpg" />
+    <Content Include="Images\gallery\image_04_l.jpg" />
+    <Content Include="Images\gallery\image_04_s.jpg" />
+    <Content Include="Images\lightbox-blank.gif" />
+    <Content Include="Images\lightbox-btn-close.gif" />
+    <Content Include="Images\lightbox-ico-loading.gif" />
+    <Content Include="Images\map_big.jpg" />
+    <Content Include="Images\map_thumb.jpg" />
+    <Content Include="Images\tooplate_bc_blue.png" />
+    <Content Include="Images\tooplate_bc_green.png" />
+    <Content Include="Images\tooplate_bc_orange.png" />
+    <Content Include="Images\tooplate_body.jpg" />
+    <Content Include="Images\tooplate_image_01.jpg" />
+    <Content Include="Images\tooplate_image_02.jpg" />
+    <Content Include="Images\tooplate_image_03.jpg" />
+    <Content Include="Images\tooplate_image_04.jpg" />
+    <Content Include="Images\tooplate_image_05.jpg" />
+    <Content Include="Images\tooplate_image_06.jpg" />
+    <Content Include="Images\tooplate_image_07.jpg" />
+    <Content Include="Images\tooplate_image_08.jpg" />
+    <Content Include="Images\tooplate_list.png" />
+    <Content Include="Images\tooplate_logo.png" />
+    <Content Include="Images\tooplate_menu.png" />
+    <Content Include="Images\tooplate_menu_divider.png" />
+    <Content Include="Images\tooplate_middle.png" />
+    <Content Include="Images\tooplate_more.png" />
+    <Content Include="LOGIN.aspx" />
+    <Content Include="PhotoArt.Master" />
+    <None Include="Properties\PublishProfiles\Asp.pubxml" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Popup.aspx" />
+    <Content Include="ProductDetails.aspx" />
+    <Content Include="ProductsPage.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Register_auc.aspx" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.1.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.1.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
+    <Content Include="Single\css\etalage.css" />
+    <Content Include="Single\css\form.css" />
+    <Content Include="Single\css\megamenu.css" />
+    <Content Include="Single\css\style.css" />
+    <Content Include="Single\images\arrow.png" />
+    <Content Include="Single\images\arrow2.gif" />
+    <Content Include="Single\images\arrows.png" />
+    <Content Include="Single\images\as.png" />
+    <Content Include="Single\images\b-arrow.png" />
+    <Content Include="Single\images\banner1.jpg" />
+    <Content Include="Single\images\banner2.jpg" />
+    <Content Include="Single\images\border.png" />
+    <Content Include="Single\images\b_star.png" />
+    <Content Include="Single\images\down_arrow.png" />
+    <Content Include="Single\images\f_icon.png" />
+    <Content Include="Single\images\f_icon1.png" />
+    <Content Include="Single\images\f_icon2.png" />
+    <Content Include="Single\images\img-sprite.png" />
+    <Content Include="Single\images\logo.png" />
+    <Content Include="Single\images\nav_img.jpg" />
+    <Content Include="Single\images\nav_img1.jpg" />
+    <Content Include="Single\images\nav_img2.jpg" />
+    <Content Include="Single\images\nz.png" />
+    <Content Include="Single\images\pic.jpg" />
+    <Content Include="Single\images\pic1.jpg" />
+    <Content Include="Single\images\pic10.jpg" />
+    <Content Include="Single\images\pic11.jpg" />
+    <Content Include="Single\images\pic2.jpg" />
+    <Content Include="Single\images\pic3.jpg" />
+    <Content Include="Single\images\pic4.jpg" />
+    <Content Include="Single\images\pic5.jpg" />
+    <Content Include="Single\images\pic6.jpg" />
+    <Content Include="Single\images\pic7.jpg" />
+    <Content Include="Single\images\pic8.jpg" />
+    <Content Include="Single\images\pic9.jpg" />
+    <Content Include="Single\images\pk.png" />
+    <Content Include="Single\images\plus.png" />
+    <Content Include="Single\images\radius.png" />
+    <Content Include="Single\images\srl.png" />
+    <Content Include="Single\images\star.png" />
+    <Content Include="Single\images\s_arrow.png" />
+    <Content Include="Single\images\t1.jpg" />
+    <Content Include="Single\images\t2.jpg" />
+    <Content Include="Single\images\t3.jpg" />
+    <Content Include="Single\images\t4.jpg" />
+    <Content Include="Single\images\t5.jpg" />
+    <Content Include="Single\images\t6.jpg" />
+    <Content Include="Single\images\uk.png" />
+    <Content Include="Single\images\us.png" />
+    <Content Include="Single\images\wish.png" />
+    <Content Include="Single\images\zoom.png" />
+    <Content Include="Single\js\easing.js" />
+    <Content Include="Single\js\jquery.etalage.min.js" />
+    <Content Include="Single\js\jquery.flexisel.js" />
+    <Content Include="Single\js\jquery.jscrollpane.min.js" />
+    <Content Include="Single\js\jquery.min.js" />
+    <Content Include="Single\js\jquery.wmuSlider.js" />
+    <Content Include="Single\js\megamenu.js" />
+    <Content Include="Single\js\move-top.js" />
+    <Content Include="your_complaint.aspx" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon.htm" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a.htm" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\analytics.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_002.htm" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\1_large.jpg" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\1_small.jpg" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\2_small.jpg" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\4_large.jpg" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\5_large.jpg" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\css.css" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\css_002.css" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\epic-image-zoom.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\ga.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\grid.css" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\jquery.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\a_data\theme.css" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\conversion.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\full_screen_preview-0572cfac431398feab072e5a03e2d185.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\goal.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\index-0316dd0759716152671876a3781b5919.css" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\index-a753623b16277de3e3abddf9d88cf3f8.css" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\jquery-e5fa4249bb0e6cc68d065935e42c7612.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\linkid.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\nr-476.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\vendor_webtrends-a843228499eb18399a6013591e57d424.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\webtrends.js" />
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\wtid.js" />
+    <Content Include="css_pirobox\black\Thumbs.db" />
+    <Content Include="css_pirobox\shadow\Thumbs.db" />
+    <Content Include="css_pirobox\Thumbs.db" />
+    <Content Include="css_pirobox\white\Thumbs.db" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\fcf8d519de" />
+    <Content Include="fINAL\css\images\Thumbs.db" />
+    <Content Include="join now\Thumbs.db" />
+    <Content Include="NewFolder1\fonts\fontawesome-webfont.eot" />
+    <Content Include="NewFolder1\fonts\fontawesome-webfont.svg" />
+    <Content Include="NewFolder1\fonts\fontawesome-webfont.ttf" />
+    <Content Include="NewFolder1\fonts\fontawesome-webfont.woff" />
+    <Content Include="NewFolder1\fonts\FontAwesome.otf" />
+    <Content Include="PAINTINGS\Thumbs.db" />
+    <Content Include="paint\Thumbs.db" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="2\js-image-slider.css" />
+    <Content Include="2\js-image-slider.js" />
+    <Content Include="2\loading.gif" />
+    <Content Include="App_Data\ASPNETDB.MDF" />
+    <Content Include="App_Data\aspnetdb_log.ldf">
+      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    </Content>
+    <Content Include="Css\ChatStyle.css" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\jquery-ui.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.all.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.base.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.button.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.core.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.menu.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.slider.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.theme.css" />
+    <Content Include="Css\JQueryUI\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Css\JQueryUI\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery-ui.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.accordion.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.all.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.autocomplete.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.base.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.button.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.core.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.datepicker.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.dialog.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.menu.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.progressbar.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.resizable.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.selectable.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.slider.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.spinner.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.tabs.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.theme.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\jquery.ui.tooltip.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery-ui.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.button.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.core.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.menu.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.slider.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.theme.min.css" />
+    <Content Include="Css\JQueryUI\themes\ui-lightness\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="css_pirobox\bg_tms.jpg" />
+    <Content Include="css_pirobox\black\ajax-loader_b.gif" />
+    <Content Include="css_pirobox\black\bg_load.gif" />
+    <Content Include="css_pirobox\black\bg_load.png" />
+    <Content Include="css_pirobox\black\b_c.png" />
+    <Content Include="css_pirobox\black\b_l.png" />
+    <Content Include="css_pirobox\black\b_r.png" />
+    <Content Include="css_pirobox\black\c.png" />
+    <Content Include="css_pirobox\black\close_btn3.png" />
+    <Content Include="css_pirobox\black\c_l.png" />
+    <Content Include="css_pirobox\black\c_r.png" />
+    <Content Include="css_pirobox\black\img_bg.png" />
+    <Content Include="css_pirobox\black\link_out.gif" />
+    <Content Include="css_pirobox\black\link_out.png" />
+    <Content Include="css_pirobox\black\link_out_h.gif" />
+    <Content Include="css_pirobox\black\link_out_h.png" />
+    <Content Include="css_pirobox\black\next.png" />
+    <Content Include="css_pirobox\black\nextoutside.png" />
+    <Content Include="css_pirobox\black\nextoutside_h.png" />
+    <Content Include="css_pirobox\black\next_h.png" />
+    <Content Include="css_pirobox\black\pause.png" />
+    <Content Include="css_pirobox\black\pause_h.png" />
+    <Content Include="css_pirobox\black\play.png" />
+    <Content Include="css_pirobox\black\play_h.png" />
+    <Content Include="css_pirobox\black\prev.png" />
+    <Content Include="css_pirobox\black\prevoutside.png" />
+    <Content Include="css_pirobox\black\prevoutside_h.png" />
+    <Content Include="css_pirobox\black\prev_h.png" />
+    <Content Include="css_pirobox\black\style.css" />
+    <Content Include="css_pirobox\black\t_c.png" />
+    <Content Include="css_pirobox\black\t_l.png" />
+    <Content Include="css_pirobox\black\t_r.png" />
+    <Content Include="css_pirobox\css_page.css" />
+    <Content Include="css_pirobox\mycss1.css" />
+    <Content Include="css_pirobox\shadow\ajax-loader_b.gif" />
+    <Content Include="css_pirobox\shadow\bg_load.gif" />
+    <Content Include="css_pirobox\shadow\bg_load.png" />
+    <Content Include="css_pirobox\shadow\b_c.png" />
+    <Content Include="css_pirobox\shadow\b_l.png" />
+    <Content Include="css_pirobox\shadow\b_r.png" />
+    <Content Include="css_pirobox\shadow\close_btn3.png" />
+    <Content Include="css_pirobox\shadow\c_l.png" />
+    <Content Include="css_pirobox\shadow\c_r.png" />
+    <Content Include="css_pirobox\shadow\img_bg.png" />
+    <Content Include="css_pirobox\shadow\link_out.gif" />
+    <Content Include="css_pirobox\shadow\link_out.png" />
+    <Content Include="css_pirobox\shadow\link_out_h.gif" />
+    <Content Include="css_pirobox\shadow\link_out_h.png" />
+    <Content Include="css_pirobox\shadow\next.png" />
+    <Content Include="css_pirobox\shadow\nextoutside.png" />
+    <Content Include="css_pirobox\shadow\nextoutside_h.png" />
+    <Content Include="css_pirobox\shadow\next_h.png" />
+    <Content Include="css_pirobox\shadow\pause.png" />
+    <Content Include="css_pirobox\shadow\pause_h.png" />
+    <Content Include="css_pirobox\shadow\play.png" />
+    <Content Include="css_pirobox\shadow\play_h.png" />
+    <Content Include="css_pirobox\shadow\prev.png" />
+    <Content Include="css_pirobox\shadow\prevoutside.png" />
+    <Content Include="css_pirobox\shadow\prevoutside_h.png" />
+    <Content Include="css_pirobox\shadow\prev_h.png" />
+    <Content Include="css_pirobox\shadow\style.css" />
+    <Content Include="css_pirobox\shadow\t_c.png" />
+    <Content Include="css_pirobox\shadow\t_l.png" />
+    <Content Include="css_pirobox\shadow\t_r.png" />
+    <Content Include="css_pirobox\shad_bg.jpg" />
+    <Content Include="css_pirobox\white\ajax-loader_b.gif" />
+    <Content Include="css_pirobox\white\ajax-loader_w.gif" />
+    <Content Include="css_pirobox\white\bg_load.gif" />
+    <Content Include="css_pirobox\white\bg_load.png" />
+    <Content Include="css_pirobox\white\bg_load_w.png" />
+    <Content Include="css_pirobox\white\b_c.png" />
+    <Content Include="css_pirobox\white\b_l.png" />
+    <Content Include="css_pirobox\white\b_r.png" />
+    <Content Include="css_pirobox\white\c.png" />
+    <Content Include="css_pirobox\white\close_btn3.png" />
+    <Content Include="css_pirobox\white\credits_bg.png" />
+    <Content Include="css_pirobox\white\c_l.png" />
+    <Content Include="css_pirobox\white\c_r.png" />
+    <Content Include="css_pirobox\white\img_bg.png" />
+    <Content Include="css_pirobox\white\link_out.gif" />
+    <Content Include="css_pirobox\white\link_out.png" />
+    <Content Include="css_pirobox\white\link_out_h.gif" />
+    <Content Include="css_pirobox\white\link_out_h.png" />
+    <Content Include="css_pirobox\white\next.png" />
+    <Content Include="css_pirobox\white\nextoutside.png" />
+    <Content Include="css_pirobox\white\nextoutside_h.png" />
+    <Content Include="css_pirobox\white\next_h.png" />
+    <Content Include="css_pirobox\white\pause.png" />
+    <Content Include="css_pirobox\white\pause_h.png" />
+    <Content Include="css_pirobox\white\pirobox_down.png" />
+    <Content Include="css_pirobox\white\play.png" />
+    <Content Include="css_pirobox\white\play_h.png" />
+    <Content Include="css_pirobox\white\prev.png" />
+    <Content Include="css_pirobox\white\prevoutside.png" />
+    <Content Include="css_pirobox\white\prevoutside_h.png" />
+    <Content Include="css_pirobox\white\prev_h.png" />
+    <Content Include="css_pirobox\white\style.css" />
+    <Content Include="css_pirobox\white\t_c.png" />
+    <Content Include="css_pirobox\white\t_l.png" />
+    <Content Include="css_pirobox\white\t_r.png" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a.htm" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\analytics.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_002.htm" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\1_large.jpg" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\1_small.jpg" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\2_small.jpg" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\4_large.jpg" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\5_large.jpg" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\css.css" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\css_002.css" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\epic-image-zoom.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\ga.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\grid.css" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\jquery.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\a_data\theme.css" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\conversion.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\full_screen_preview-0572cfac431398feab072e5a03e2d185.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\goal.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\index-0316dd0759716152671876a3781b5919.css" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\index-a753623b16277de3e3abddf9d88cf3f8.css" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\jquery-e5fa4249bb0e6cc68d065935e42c7612.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\linkid.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\nr-476.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\vendor_webtrends-a843228499eb18399a6013591e57d424.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\webtrends.js" />
+    <Content Include="Epic Image Zoom Preview - CodeCanyon_files\wtid.js" />
+    <Content Include="fINAL\css\ie6.css" />
+    <Content Include="fINAL\css\images\big1.jpg" />
+    <Content Include="fINAL\css\images\big2.jpg" />
+    <Content Include="fINAL\css\images\big3.jpg" />
+    <Content Include="fINAL\css\images\body.gif" />
+    <Content Include="fINAL\css\images\bul.gif" />
+    <Content Include="fINAL\css\images\cart-link.gif" />
+    <Content Include="fINAL\css\images\cat.gif" />
+    <Content Include="fINAL\css\images\h2-arr.gif" />
+    <Content Include="fINAL\css\images\header.gif" />
+    <Content Include="fINAL\css\images\ico1.gif" />
+    <Content Include="fINAL\css\images\ico2.gif" />
+    <Content Include="fINAL\css\images\ico3.gif" />
+    <Content Include="fINAL\css\images\ico4.gif" />
+    <Content Include="fINAL\css\images\info.png" />
+    <Content Include="fINAL\css\images\logo.gif" />
+    <Content Include="fINAL\css\images\next.gif" />
+    <Content Include="fINAL\css\images\PhotoArt1.png" />
+    <Content Include="fINAL\css\images\PhotoArt2.png" />
+    <Content Include="fINAL\css\images\prev.gif" />
+    <Content Include="fINAL\css\images\slide1.jpg" />
+    <Content Include="fINAL\css\images\small1.jpg" />
+    <Content Include="fINAL\css\images\small2.jpg" />
+    <Content Include="fINAL\css\images\small3.jpg" />
+    <Content Include="fINAL\css\images\small4.jpg" />
+    <Content Include="fINAL\css\images\small5.jpg" />
+    <Content Include="fINAL\css\images\small6.jpg" />
+    <Content Include="fINAL\css\images\small7.jpg" />
+    <Content Include="fINAL\css\style.css" />
+    <Content Include="fINAL\index.html" />
+    <Content Include="fINAL\js\jquery-1.4.1.min.js" />
+    <Content Include="fINAL\js\jquery-func.js" />
+    <Content Include="fINAL\js\jquery.jcarousel.pack.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Images1\delete.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="index.html" />
+    <Content Include="join now\index.jpg" />
+    <Content Include="join now\join now.jpg" />
+    <Content Include="join now\join.png" />
+    <Content Include="jqsld\caption1.gif" />
+    <Content Include="jqsld\caption2.gif" />
+    <Content Include="jqsld\caption3.gif" />
+    <Content Include="jqsld\caption4.gif" />
+    <Content Include="jqsld\image-slider-1.jpg" />
+    <Content Include="jqsld\image-slider-2.jpg" />
+    <Content Include="jqsld\image-slider-3.jpg" />
+    <Content Include="jqsld\image-slider-4.jpg" />
+    <Content Include="jqsld\image-slider-5.jpg" />
+    <Content Include="jqsld\photo1.jpg" />
+    <Content Include="jqsld\photo2.jpg" />
+    <Content Include="jqsld\photo3.jpg" />
+    <Content Include="jqsld\slider-1.jpg" />
+    <Content Include="jqsld\slider-2.jpg" />
+    <Content Include="jqsld\slider-3.jpg" />
+    <Content Include="jqsld\slider-4.jpg" />
+    <Content Include="jqsld\thumb-1.gif" />
+    <Content Include="jqsld\thumb-2.gif" />
+    <Content Include="jqsld\thumb-3.gif" />
+    <Content Include="jqsld\thumb-4.gif" />
+    <Content Include="jqsld\thumb1.jpg" />
+    <Content Include="jqsld\thumb2.jpg" />
+    <Content Include="jqsld\thumb3.jpg" />
+    <Content Include="jqsld\thumb4.jpg" />
+    <Content Include="jqsld\thumb5.jpg" />
+    <Content Include="js\jquery-1.4.1.min.js" />
+    <Content Include="js\jquery-func.js" />
+    <Content Include="js\jquery.jcarousel.pack.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\piroBox.1_2.js" />
+    <Content Include="js\piroBox.1_2_min.js" />
+    <Content Include="NewFolder1\contact-form-1.html" />
+    <Content Include="NewFolder1\contact-form-2.html" />
+    <Content Include="NewFolder1\create-account.html" />
+    <Content Include="NewFolder1\css\bootstrap-social.css" />
+    <Content Include="NewFolder1\css\bootstrap-theme.min.css" />
+    <Content Include="NewFolder1\css\bootstrap.min.css" />
+    <Content Include="NewFolder1\css\font-awesome.min.css" />
+    <Content Include="NewFolder1\css\templatemo_style.css" />
+    <Content Include="NewFolder1\forgot-password.html" />
+    <Content Include="NewFolder1\images\amex.png" />
+    <Content Include="NewFolder1\images\cvv2.jpg" />
+    <Content Include="NewFolder1\images\jcb.png" />
+    <Content Include="NewFolder1\images\mastercard.png" />
+    <Content Include="NewFolder1\images\paypal.png" />
+    <Content Include="NewFolder1\images\templatemo-bg-1.jpg" />
+    <Content Include="NewFolder1\images\templatemo-bg-2.jpg" />
+    <Content Include="NewFolder1\images\visa.png" />
+    <Content Include="NewFolder1\index.html" />
+    <Content Include="NewFolder1\inline-login.html" />
+    <Content Include="NewFolder1\js\bootstrap.min.js" />
+    <Content Include="NewFolder1\js\jquery-1.11.1.min.js" />
+    <Content Include="NewFolder1\login-1.html" />
+    <Content Include="NewFolder1\login-2.html" />
+    <Content Include="NewFolder1\payment-form.html" />
+    <Content Include="PAINTINGS\hover_demo.html" />
+    <Content Include="PAINTINGS\images.jpg" />
+    <Content Include="PAINTINGS\images1.jpg" />
+    <Content Include="PAINTINGS\images3.jpg" />
+    <Content Include="PAINTINGS\index.jpg" />
+    <Content Include="PAINTINGS\index2.jpg" />
+    <Content Include="PAINTINGS\index3.jpg" />
+    <Content Include="PAINTINGS\mordern.jpg" />
+    <Content Include="PAINTINGS\rel.jpg" />
+    <Content Include="paint\pic1.jpg" />
+    <Content Include="paint\pic2.jpg" />
+    <Content Include="paint\pic3.jpg" />
+    <Content Include="paint\pic4.jpg" />
+    <Content Include="paint\pic5.jpg" />
+    <Content Include="paint\small1.jpg" />
+    <Content Include="paint\small10.jpg" />
+    <Content Include="paint\small11.jpg" />
+    <Content Include="paint\small2.jpg" />
+    <Content Include="paint\small3.jpg" />
+    <Content Include="paint\small4.jpg" />
+    <Content Include="paint\small5.jpg" />
+    <Content Include="paint\small6.jpg" />
+    <Content Include="paint\small7.jpg" />
+    <Content Include="paint\small8.jpg" />
+    <Content Include="paint\small9.jpg" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.0.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.0.min.js" />
+    <Content Include="Scripts\ui\jquery.ui.core.js" />
+    <Content Include="Scripts\ui\jquery.ui.dialog.js" />
+    <Content Include="Scripts\ui\jquery.ui.draggable.js" />
+    <Content Include="Scripts\ui\jquery.ui.mouse.js" />
+    <Content Include="Scripts\ui\jquery.ui.resizable.js" />
+    <Content Include="Scripts\ui\jquery.ui.widget.js" />
+    <Content Include="sld\1.gif" />
+    <Content Include="sld\addtocart.gif" />
+    <Content Include="sld\bann1.jpg" />
+    <Content Include="sld\bann2.jpg" />
+    <Content Include="sld\bar_bg.gif" />
+    <Content Include="sld\bg.jpg" />
+    <Content Include="sld\big_pic.jpg" />
+    <Content Include="sld\blue-add.png" />
+    <Content Include="sld\camera.png" />
+    <Content Include="sld\car.png" />
+    <Content Include="sld\cart.gif" />
+    <Content Include="sld\cart_bg.gif" />
+    <Content Include="sld\checked.png" />
+    <Content Include="sld\compare.gif" />
+    <Content Include="sld\contact-new.png" />
+    <Content Include="sld\contact_bt.gif" />
+    <Content Include="sld\csscreme.jpg" />
+    <Content Include="sld\de.gif" />
+    <Content Include="sld\details_box_bottom.gif" />
+    <Content Include="sld\details_box_center.gif" />
+    <Content Include="sld\details_box_top.gif" />
+    <Content Include="sld\details_bt_bg.gif" />
+    <Content Include="sld\details_bt_bg.png" />
+    <Content Include="sld\en.gif" />
+    <Content Include="sld\favorites.gif" />
+    <Content Include="sld\favorites.png" />
+    <Content Include="sld\favs.gif" />
+    <Content Include="sld\favs.png" />
+    <Content Include="sld\footer_bg.gif" />
+    <Content Include="sld\footer_logo.png" />
+    <Content Include="sld\header_bg.jpg" />
+    <Content Include="sld\header_divider.png" />
+    <Content Include="sld\home.png" />
+    <Content Include="sld\iphone.png" />
+    <Content Include="sld\laptop.gif" />
+    <Content Include="sld\laptop.png" />
+    <Content Include="sld\logo.png" />
+    <Content Include="sld\menu_bg.gif" />
+    <Content Include="sld\menu_divider.gif" />
+    <Content Include="sld\menu_left.gif" />
+    <Content Include="sld\menu_right.gif" />
+    <Content Include="sld\menu_title_bg.gif" />
+    <Content Include="sld\navbullet.png" />
+    <Content Include="sld\p1.gif" />
+    <Content Include="sld\p2.gif" />
+    <Content Include="sld\p4.gif" />
+    <Content Include="sld\p5.gif" />
+    <Content Include="sld\pag_bg.gif" />
+    <Content Include="sld\pag_bg.png" />
+    <Content Include="sld\pag_bg_a.gif" />
+    <Content Include="sld\pag_bg_a.png" />
+    <Content Include="sld\payment.gif" />
+    <Content Include="sld\products_details_bg.gif" />
+    <Content Include="sld\product_box_bottom.gif" />
+    <Content Include="sld\product_box_center.gif" />
+    <Content Include="sld\product_box_top.gif" />
+    <Content Include="sld\search.gif" />
+    <Content Include="sld\services.png" />
+    <Content Include="sld\shoppingcart.png" />
+    <Content Include="sld\square-blue-add.gif" />
+    <Content Include="sld\thumb1.gif" />
+    <Content Include="sld\thumb2.gif" />
+    <Content Include="sld\top_search_bg.gif" />
+    <Content Include="sld\Untitled.png" />
+    <Content Include="sld\user_add.png" />
+    <Content Include="update2\blank.gif" />
+    <Content Include="update2\contact.html" />
+    <Content Include="update2\details.html" />
+    <Content Include="update2\iecss.css" />
+    <Content Include="update2\iepngfix.htc" />
+    <Content Include="update2\index.html" />
+    <Content Include="update2\js\boxOver.js" />
+    <Content Include="update2\js\windowopen.js" />
+    <Content Include="update2\sld\1.gif" />
+    <Content Include="update2\sld\addtocart.gif" />
+    <Content Include="update2\sld\bann1.jpg" />
+    <Content Include="update2\sld\bann2.jpg" />
+    <Content Include="update2\sld\bar_bg.gif" />
+    <Content Include="update2\sld\bg.jpg" />
+    <Content Include="update2\sld\big_pic.jpg" />
+    <Content Include="update2\sld\blue-add.png" />
+    <Content Include="update2\sld\camera.png" />
+    <Content Include="update2\sld\car.png" />
+    <Content Include="update2\sld\cart.gif" />
+    <Content Include="update2\sld\cart_bg.gif" />
+    <Content Include="update2\sld\checked.png" />
+    <Content Include="update2\sld\compare.gif" />
+    <Content Include="update2\sld\contact-new.png" />
+    <Content Include="update2\sld\contact_bt.gif" />
+    <Content Include="update2\sld\csscreme.jpg" />
+    <Content Include="update2\sld\de.gif" />
+    <Content Include="update2\sld\details_box_bottom.gif" />
+    <Content Include="update2\sld\details_box_center.gif" />
+    <Content Include="update2\sld\details_box_top.gif" />
+    <Content Include="update2\sld\details_bt_bg.gif" />
+    <Content Include="update2\sld\details_bt_bg.png" />
+    <Content Include="update2\sld\en.gif" />
+    <Content Include="update2\sld\favorites.gif" />
+    <Content Include="update2\sld\favorites.png" />
+    <Content Include="update2\sld\favs.gif" />
+    <Content Include="update2\sld\favs.png" />
+    <Content Include="update2\sld\footer_bg.gif" />
+    <Content Include="update2\sld\footer_logo.png" />
+    <Content Include="update2\sld\header_bg.jpg" />
+    <Content Include="update2\sld\header_divider.png" />
+    <Content Include="update2\sld\home.png" />
+    <Content Include="update2\sld\iphone.png" />
+    <Content Include="update2\sld\laptop.gif" />
+    <Content Include="update2\sld\laptop.png" />
+    <Content Include="update2\sld\logo.png" />
+    <Content Include="update2\sld\menu_bg.gif" />
+    <Content Include="update2\sld\menu_divider.gif" />
+    <Content Include="update2\sld\menu_left.gif" />
+    <Content Include="update2\sld\menu_right.gif" />
+    <Content Include="update2\sld\menu_title_bg.gif" />
+    <Content Include="update2\sld\navbullet.png" />
+    <Content Include="update2\sld\p1.gif" />
+    <Content Include="update2\sld\p2.gif" />
+    <Content Include="update2\sld\p4.gif" />
+    <Content Include="update2\sld\p5.gif" />
+    <Content Include="update2\sld\pag_bg.gif" />
+    <Content Include="update2\sld\pag_bg.png" />
+    <Content Include="update2\sld\pag_bg_a.gif" />
+    <Content Include="update2\sld\pag_bg_a.png" />
+    <Content Include="update2\sld\payment.gif" />
+    <Content Include="update2\sld\products_details_bg.gif" />
+    <Content Include="update2\sld\product_box_bottom.gif" />
+    <Content Include="update2\sld\product_box_center.gif" />
+    <Content Include="update2\sld\product_box_top.gif" />
+    <Content Include="update2\sld\search.gif" />
+    <Content Include="update2\sld\services.png" />
+    <Content Include="update2\sld\shoppingcart.png" />
+    <Content Include="update2\sld\square-blue-add.gif" />
+    <Content Include="update2\sld\thumb1.gif" />
+    <Content Include="update2\sld\thumb2.gif" />
+    <Content Include="update2\sld\top_search_bg.gif" />
+    <Content Include="update2\sld\Untitled.png" />
+    <Content Include="update2\sld\user_add.png" />
+    <Content Include="update2\style.css" />
+    <Content Include="Update\fwt.css" />
+    <Content Include="Update\images\10.jpg" />
+    <Content Include="Update\images\11.jpg" />
+    <Content Include="Update\images\12.jpg" />
+    <Content Include="Update\images\4.jpg" />
+    <Content Include="Update\images\5.jpg" />
+    <Content Include="Update\images\6.jpg" />
+    <Content Include="Update\images\7.jpg" />
+    <Content Include="Update\images\8.jpg" />
+    <Content Include="Update\images\9.jpg" />
+    <Content Include="Update\images\abc.png" />
+    <Content Include="Update\images\artpeak.png" />
+    <Content Include="Update\images\artsoles.jpg" />
+    <Content Include="Update\images\bg.jpg" />
+    <Content Include="Update\images\busy %282%29.jpg" />
+    <Content Include="Update\images\busy.jpg" />
+    <Content Include="Update\images\image01.jpg" />
+    <Content Include="Update\images\image02.jpg" />
+    <Content Include="Update\images\image03.jpg" />
+    <Content Include="Update\images\image04.jpg" />
+    <Content Include="Update\images\image05.jpg" />
+    <Content Include="Update\images\image06.jpg" />
+    <Content Include="Update\images\image07.jpg" />
+    <Content Include="Update\images\image08.jpg" />
+    <Content Include="Update\images\image09.jpg" />
+    <Content Include="Update\images\image10.jpg" />
+    <Content Include="Update\images\image11.jpg" />
+    <Content Include="Update\images\image12.jpg" />
+    <Content Include="Update\images\pan.jpg" />
+    <Content Include="Update\index.html" />
+    <Content Include="Update\js\jquery-1.7.1.min.js" />
+    <Content Include="Update\js\jquery.poptrox-0.1.js" />
+    <Content Include="Update\js\jquery.slidertron-0.3.js" />
+    <Content Include="Update\license.txt" />
+    <Content Include="Update\loader.gif" />
+    <Content Include="UploadedPaintings\Lighthouse.jpg" />
+    <Content Include="UploadedPaintings\Penguins.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="zoom\Epic Image Zoom Preview - CodeCanyon_files\fcf8d519de" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_product.aspx.cs">
+      <DependentUpon>Add_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Add_product.aspx.designer.cs">
+      <DependentUpon>Add_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auction_Page.aspx.cs">
+      <DependentUpon>Auction_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auction_Page.aspx.designer.cs">
+      <DependentUpon>Auction_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FitCat.aspx.cs">
+      <DependentUpon>FitCat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FitCat.aspx.designer.cs">
+      <DependentUpon>FitCat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.aspx.cs">
+      <DependentUpon>LOGIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOGIN.aspx.designer.cs">
+      <DependentUpon>LOGIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.aspx.cs">
+      <DependentUpon>Popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup.aspx.designer.cs">
+      <DependentUpon>Popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsPage.aspx.cs">
+      <DependentUpon>ProductsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductsPage.aspx.designer.cs">
+      <DependentUpon>ProductsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register_auc.aspx.cs">
+      <DependentUpon>Register_auc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register_auc.aspx.designer.cs">
+      <DependentUpon>Register_auc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="your_complaint.aspx.cs">
+      <DependentUpon>your_complaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="your_complaint.aspx.designer.cs">
+      <DependentUpon>your_complaint.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\Class1.cs" />
+    <Compile Include="ChatHub.cs" />
+    <Compile Include="Common\MessageDetail.cs" />
+    <Compile Include="Common\UserDetail.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoArt.Master.cs">
+      <DependentUpon>PhotoArt.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhotoArt.Master.designer.cs">
+      <DependentUpon>PhotoArt.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="sld\Thumbs.db" />
+    <Content Include="Update\images\Thumbs.db" />
+    <Content Include="Single\images\arrows.psd" />
+    <Content Include="Single\images\fb.psd" />
+    <Content Include="Single\images\g+.psd" />
+    <Content Include="Single\images\img-sprite.psd" />
+    <Content Include="Single\images\logo.psd" />
+    <Content Include="Single\images\radius.psd" />
+    <Content Include="Single\images\social.psd" />
+    <Content Include="Single\images\star.psd" />
+    <Content Include="Single\images\s_arrow.psd" />
+    <Content Include="Single\images\Thumbs.db" />
+    <Content Include="Single\images\tw.psd" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Auction_pic\" />
+    <Folder Include="css_pirobox\test\" />
+    <Folder Include="Seller\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53398/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

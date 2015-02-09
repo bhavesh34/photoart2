@@ -1,0 +1,17 @@
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\SignalRChat.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\SignalRChat.pdb
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.Core.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.Owin.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.Web.Infrastructure.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Newtonsoft.Json.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Owin.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.Core.xml
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.Owin.xml
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\bin\Newtonsoft.Json.xml
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\obj\Release\SignalRChat.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\obj\Release\SignalRChat.dll
+\\psf\Home\Desktop\PhotoArt\SignalRChatRoom\SignalRChat\obj\Release\SignalRChat.pdb

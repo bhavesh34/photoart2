@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="photoartConnectionString2-Web.config Connection String" description="photoartConnectionString2 Connection String used in web.config by the application to access the database." defaultValue="Data Source=MACBOOK82E1\SQLEXPRESS;Initial Catalog=photoart;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="\\\\psf\\Home\\Desktop\\PhotoArt\\SignalRChatRoom\\SignalRChat\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='photoartConnectionString2']/@connectionString" />
+  </parameter>
+  <parameter name="con-Web.config Connection String" description="con Connection String used in web.config by the application to access the database." defaultValue="Data Source=MACBOOK82E1\SQLEXPRESS;Initial Catalog=photoart;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="\\\\psf\\Home\\Desktop\\PhotoArt\\SignalRChatRoom\\SignalRChat\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='con']/@connectionString" />
+  </parameter>
+  <parameter name="photoartConnectionString-Web.config Connection String" description="photoartConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=MACBOOK82E1\SQLEXPRESS;Initial Catalog=photoart;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="\\\\psf\\Home\\Desktop\\PhotoArt\\SignalRChatRoom\\SignalRChat\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='photoartConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
